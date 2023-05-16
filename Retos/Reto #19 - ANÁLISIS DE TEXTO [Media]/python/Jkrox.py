@@ -19,16 +19,12 @@ def text_analyzer(text):
     characters = 0
     
     for i in text:
-        # Total words
-        if i in letters:
-            characters += 1
-        elif i == " ":
-            palabras_total += 1 
         #  Text sentence length
         if i == '.':
             numero_oraciones_del_texto += 1
         # Long word
         if i in letters:
+            characters += 1
             palabra_actual += i 
             cantidad_letras_palabra_actual += 1
             if cantidad_letras_palabra_actual > cantidad_letras_palabra_larga:
@@ -36,6 +32,7 @@ def text_analyzer(text):
                 cantidad_letras_palabra_larga = cantidad_letras_palabra_actual
         else:
             if i == " ":
+                palabras_total += 1 # Total words #1
                 palabra_actual = ''
                 cantidad_letras_palabra_actual = 0
         
